@@ -3,7 +3,7 @@ C++
 This library allows you to control unipolar or bipolar stepper motors.
 
 example:
-
+<code>
 #include <Stepper.h>
 
 #define motorSteps 200     // change this depending on the number of steps
@@ -34,3 +34,4 @@ int main()
 {
 motor();
 }
+</code>

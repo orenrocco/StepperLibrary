@@ -9,8 +9,8 @@ example:
 #include "Stepper.h"     
 #include <iostream>
 #define motorSteps 200    // change this depending on the number of steps
-#define motorPin1 8//IO
-#define motorPin2 9//IO
+#define motorPin1 8//GPIO
+#define motorPin2 9//GPIO
 #define ledPin 13
 //  initialize of the Stepper library:
 Stepper myStepper(motorSteps, motorPin1,motorPin2); 

@@ -6,7 +6,8 @@ example:
 
 
 ```c++
-#include <Stepper.h>     
+#include "Stepper.h"     
+#include <iostream>
 #define motorSteps 200    // change this depending on the number of steps
 #define motorPin1 8//IO
 #define motorPin2 9//IO
@@ -17,11 +18,10 @@ void motor() {
     //set the motor speed at 60 RPMS:
     myStepper.setSpeed(60);
     myStepper.step(100);
-    delay(500);
+    sleep(500)
     // Step backward 100 steps:
-    Serial.println("Backward");
     myStepper.step(-100);
-    delay(500); 
+    sleep(500)
     }
     int main()
     {

@@ -5,11 +5,13 @@
 #include <unistd.h>
 #include <sys/select.h>
 #include <sys/stat.h>
+#include  <time.h>
 
 #ifdef CTL
 #include <getopt.h>
 #endif
 #include "gpiolib.h"
+
 
 int gpio_direction(int gpio, int dir)
 {
@@ -182,6 +184,24 @@ int gpio_write(int gpio, int val)
 	return 1;
 }
 
+int gpio_pwm(int gpio, int time, int num)
+{
+      clock_t before=clock();
+      gpio_write(gpio, 1);
+      do
+      {        //gpio_write(gpio, 1);
+	       clock_t difference=clock()-before;
+               msec = difference * 1000 / CLOCKS_PER_SEC;
+               iterations++;
+      }while(msec<time);
+	
+if(msec>time || msec==time)
+{  if(num>0)
+{       num=num-1;
+	gpio_pwm(gpio, time, num);
+}
+}
+}
 
 int gpio_select(int gpio)
 {
